@@ -19,7 +19,7 @@ to use it.
 Add this to your project.clj:
 
 ```clojure
-[cld "..."] ;; no releases yet
+[cld "0.1.0"]
 ```
 
 ```clojure
