@@ -15,7 +15,7 @@
   :smoothing <double>   - Smoothing, defaults to 0.5
   :max-length <int>     - Maximum length of data to read, defaults to all
   :prior-map <hash-map> - A map on languages to probabilites to use
-  :verbose <boolean>    - Use verbose mode, defaults to all"
+  :verbose <boolean>    - Use verbose mode, defaults to off (false)"
   [text-or-reader & [opts]]
   (let [^Detector detector (DetectorFactory/create)]
     (when (:smoothing opts)
