@@ -6,7 +6,14 @@
 (defn load-profiles
   "Load detection profiles from either a File object or a String path."
   [file-or-string]
+  (DetectorFactory/clear)
   (DetectorFactory/loadProfile file-or-string))
+
+(defn load-default-profiles
+  "Load the default profiles from the langdetect jar."
+  []
+  (DetectorFactory/clear)
+  (DetectorFactory/loadProfile))
 
 (defn detect
   "Returns a tuple with the language as the first element and a map of
@@ -34,7 +41,7 @@
           (into {}))]))
 
 (defn default-init!
-  "Initialize the DetectorFactory with the included profiles. Will not throw an
+  "Initialize the DetectorFactory with the default profiles. Will not throw an
   exception on subsequent invocations."
   []
-  (defonce _ (load-profiles (file (resource "profiles")))))
+  (defonce _ (load-default-profiles)))
