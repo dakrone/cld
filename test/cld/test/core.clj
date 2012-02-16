@@ -2,6 +2,8 @@
   (:use [cld.core]
         [clojure.test]))
 
+(default-init!)
+
 (deftest t-detect
   (is (= "en"
          (first (detect (str "This is a sentence, it is written in "
