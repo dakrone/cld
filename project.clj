@@ -1,8 +1,8 @@
 (defproject cld "0.1.1-SNAPSHOT"
   :description "Clojure Language Detection"
-  :dependencies [[org.clojure/clojure "1.3.0"]
+  :url "https://github.com/dakrone/cld"
+  :dependencies [[org.clojure/clojure "1.4.0"]
                  [org.clojars.thnetos/langdetect-lib "1.1"]]
-  :dev-dependencies [[criterium "0.2.1-SNAPSHOT"]]
-  :resources-path "resources"
-  :dev-resources-path "resources"
+  :profiles {:dev {:dependencies [[criterium "0.2.1-SNAPSHOT"]]}}
+  :resource-paths ["resources"]
   :warn-on-reflection false)

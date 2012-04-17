@@ -1,5 +1,5 @@
 (ns cld.core
-  (:use [clojure.java.io :only [resource file]])
+  (:require [clojure.java.io :refer [resource file]])
   (:import (com.cybozu.labs.langdetect Detector DetectorFactory)
            (java.util HashMap)))
 

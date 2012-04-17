@@ -1,6 +1,6 @@
 (ns cld.test.core
-  (:use [cld.core]
-        [clojure.test]))
+  (:require [cld.core :refer :all]
+            [clojure.test :refer :all]))
 
 (default-init!)
 
@@ -27,4 +27,3 @@
                              "reforma laboral aprobada por el Ejecutivo es ya "
                              "el campo de batalla en el que se librará "
                              "el enfrentamiento."))))))
-

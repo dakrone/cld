@@ -1,7 +1,7 @@
 (ns cld.test.benchmarks
-  (:use [cld.core]
-        [clojure.test])
-  (require [criterium.core :as bench]))
+  (:require [cld.core :refer :all]
+            [clojure.test :refer :all]
+            [criterium.core :as bench]))
 
 (default-init!)
 
@@ -24,11 +24,11 @@ With these additional ideas, we will have seen most of the basic technology that
 (deftest t-benchmarks
   (println "Benchmarks with large text," (count text) "chars.")
   (bench/with-progress-reporting
-    (bench/bench (detect text) :verbose)))
+    (bench/quick-bench (detect text) :verbose)))
 
 (def text2 "This is a sentence, it is written in English. I like tacos. My cat is weird.")
 
 (deftest t-benchmarks2
   (println "Benchmarks with small text," (count text2) "chars.")
   (bench/with-progress-reporting
-    (bench/bench (detect text2) :verbose)))
+    (bench/quick-bench (detect text2) :verbose)))
